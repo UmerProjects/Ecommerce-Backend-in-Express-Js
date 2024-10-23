@@ -1,0 +1,9 @@
+#for env
+
+.env
+
+
+#for node modules
+
+    
+node_modules
