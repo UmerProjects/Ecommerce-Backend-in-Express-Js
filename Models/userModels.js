@@ -77,9 +77,9 @@ UserSchema.pre('save', async function (next) {
       }
     }
 
-    next(); // Proceed to the next middleware if no issues
+    next(); 
   } catch (error) {
-    next(error); // Pass any error to the next middleware
+    next(error); 
   }
 });
 

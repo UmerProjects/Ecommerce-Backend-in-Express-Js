@@ -43,7 +43,7 @@ export default async function adminProducts(req, res) {
   res.end();
 }
 
-export async function getAdminProducts(req, res) {
+export async function getAllAdminProducts(req, res) {
   let userId = req.user._id;
 
   let userRole = req.user.role;
@@ -60,6 +60,22 @@ export async function getAdminProducts(req, res) {
     message: "OO ballay ballay oyy",
     data: { getProducts },
   });
+}
+
+export async function getProductById(req, res){
+
+  let { id } = req.params;
+
+  let userId = req.user._id
+
+  let userRole = req.user.role;
+
+  if(userRole !== "admin"){
+    res.status(403).json({
+      message: "Forbidden, You are unauthorized to do this"
+    })
+  }
+
 }
 
 export async function updateAdminProducts(req, res) {

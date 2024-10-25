@@ -3,7 +3,7 @@ import { SECRET_ACCESS_TOKEN } from "../Config/config.js";
 import blacklist from "../Models/blacklists.js";
 import User from "../Models/userModels.js";
 
-export default async function adminVerification(req, res, next) {
+export default async function   verifySalesman(req, res, next) {
   const authHeader = req.headers["authorization"];
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
@@ -16,7 +16,7 @@ export default async function adminVerification(req, res, next) {
 
   if (checkIfBlacklisted) {
     return res.status(401).json({
-      message: "This session has been expired please login again",
+      message: "This has been expired please login again",
     });
   }
 
@@ -28,9 +28,9 @@ export default async function adminVerification(req, res, next) {
       return res.status(404).json({ message: "User not found." });
     }
 
-    if (user.role !== "admin") {
+    if (user.role !== "salesman") {
       return res.status(403).json({
-        message: "Forbidden, Admin access required",
+        message: "Forbidden, Salesman access required",
       });
     }
     req.user = user;

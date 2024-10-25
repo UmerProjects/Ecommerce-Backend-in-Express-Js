@@ -3,7 +3,7 @@ import { SECRET_ACCESS_TOKEN } from "../Config/config.js";
 import blacklist from "../Models/blacklists.js";
 import User from "../Models/userModels.js";
 
-export default async function adminVerification(req, res, next) {
+export default async function userVerification(req, res, next) {
   const authHeader = req.headers["authorization"];
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
@@ -28,9 +28,9 @@ export default async function adminVerification(req, res, next) {
       return res.status(404).json({ message: "User not found." });
     }
 
-    if (user.role !== "admin") {
+    if (user.role !== "user") {
       return res.status(403).json({
-        message: "Forbidden, Admin access required",
+        message: "Forbidden, user access required hahahah",
       });
     }
     req.user = user;
