@@ -6,7 +6,7 @@
 
 **Features:**
 
-  Added Features like bcrypt in password so that the password is stored in bcrypted form so tha no one can predict it
+  Added Features like bcrypt in password so that the password is stored in bcrypted form so that no one can predict it
 
   Added features like jsonWebToken that stores the token of the user in localstorage so it authenticate the user and measure for what timestamp it can use the app without doing login again
 
