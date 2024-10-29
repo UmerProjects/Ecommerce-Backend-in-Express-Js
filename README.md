@@ -1,6 +1,6 @@
 **Its An Ecommerce Backend using Express js and MongoDb**
 
-  Its Registered The users in user database as USER Database in mongoDb
+  It Registered The users in user database as USER Database in mongoDb
 
   Then it login the user based on their email and password 
 
