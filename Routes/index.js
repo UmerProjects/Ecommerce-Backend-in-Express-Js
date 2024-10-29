@@ -1,5 +1,7 @@
+import Cart from "../Models/cartModels.js"
 import admin from "./adminRoutes.js"
 import auth from "./auth.js"
+import cart from "./cartRoutes.js"
 import manager from "./managerRoutes.js"
 import salesMan from "./salesmanRoutes.js"
 import user from "./userRoutes.js"
@@ -15,6 +17,7 @@ const Router = (server) => {
 
     server.use('/salesman', salesMan)
     server.use('/user', user)
+    server.use('/cart', cart)
 }
 
 
