@@ -17,12 +17,12 @@
 
 **Role Based Architecture:**
 
-  There are Four rules define in the project with theri authorization
+  There are Four rules define in the project with their authorization:
 
-**1. Admin
-2. Manager
-3. Salesman
-4. User**
+**1. Admin**
+**2. Manager**
+**3. Salesman**
+**4. User**
 
 
 The admin can do CRUD operations like adding the product, updating the product and delete it 
