@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import { PORT } from "./Config/config.js";
+import { PORT, MONGODB_URL } from "./Config/config.js";
 import Router from "./Routes/index.js";
 
 
@@ -17,7 +17,7 @@ server.use(express.json())
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/ProductsApi');
+  await mongoose.connect(MONGODB_URL);
   console.log("mongoose is connected");
 }
 
