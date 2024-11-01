@@ -37,30 +37,6 @@ const UserSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// UserSchema.pre("save", async function (next) {
-//   const user = this;
-
-//   if (!user.isModified("password")) return next();
-
-//   bcrypt.genSalt(10, (err, salt) => {
-//     if (err) return next(err);
-
-//     bcrypt.hash(user.password, salt, (err, hash) => {
-//       if (err) return next(err);
-
-//       user.password = hash;
-//       next();
-//     });
-//   });
-
-//   if (this.role === "admin") {
-//     const adminExists = await this.constructor.findOne({ role: "admin" });
-//     if (adminExists) {
-//       throw new Error("Admin already exists. Cannot create another admin.");
-//     }
-//   }
-// });
-
 
 UserSchema.pre('save', async function (next) {
   try {

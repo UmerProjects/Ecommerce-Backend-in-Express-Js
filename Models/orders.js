@@ -16,7 +16,9 @@ const orderSchema = new mongoose.Schema(
       },
     ],
     totalPrice: { type: Number, required: true },
-    status: { type: String, default: "Successful" }, 
+    status: { type: String,
+      enum: ["Received By Seller", "Processed And Ready To Ship", "Reached Our Logistic", "Delivered Your Order", "Successful"],
+      default: "Successful" }, 
   },
   { timestamps: true }
 );
